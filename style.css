@@ -1,0 +1,39 @@
+body {
+    background-color: #0f98fa;
+    height: 100%;
+}
+
+.wrapper {
+    width: 800px;
+    margin: 30px auto;
+    color: white;
+    text-align: center;
+}
+
+h1, .time {
+    font-family: 'Lucida Console', sans-serif;
+    font-weight: 100;
+    font-size: 3.5em;
+    text-transform: uppercase;
+}
+
+button {
+    background-color: #0f98fa;
+    color: white;
+    border: 1px solid white;
+    text-decoration: none;
+    font-size: 1.5em;
+    padding: 18px 10px;
+    width: 180px;
+    margin: 10px;
+    outline: none;
+    transition: background-color 0.4s, color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+
+button:hover {
+    box-shadow: 0 0.5em 0.5em -0.2em rgb(126, 126, 126);
+    transform: translateY(-0.25em);
+    cursor: pointer;
+    color: #0f98fa;
+    background-color: white;
+}

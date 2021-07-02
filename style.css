@@ -2,6 +2,7 @@ body {
     background: black;
     /*background-color: #0f98fa;*/
     height: 100%;
+    font-family: 'Big Shoulders Display', cursive;
 }
 
 .wrapper {
@@ -12,7 +13,6 @@ body {
 }
 
 h1, .time {
-    font-family: 'Lucida Console', sans-serif;
     font-weight: 100;
     font-size: 3.5em;
     text-transform: uppercase;
@@ -40,12 +40,10 @@ button:hover {
 }
 
 .clock {
+    color: #0f98fa;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    color: #17D4FE;
-    font-size: 60px;
-    font-family: Orbitron;
+    top: 2%;
+    left: 3%;
+    font-size: 4.5em;
     letter-spacing: 7px;
 }

@@ -8,6 +8,8 @@ window.onload = function () { // as soon as page loads up, run function
     let buttonStart = document.getElementById("start")
     let buttonStop = document.getElementById("stop")
     let buttonReset = document.getElementById("reset")
+    let buttonLap = document.getElementById("lap")
+    let LapDisplay = document.getElementById("LapDisplay")
     let Interval // stopwatch timer
 
     // start button
@@ -27,9 +29,15 @@ window.onload = function () { // as soon as page loads up, run function
         minutes = "00"
         seconds = "00"
         tens = "00"
+        LapDisplay.innerHTML = ""
         appendMinutes.innerHTML = minutes
         appendSeconds.innerHTML = seconds
         appendTens.innerHTML = tens
+    }
+
+    //Lap button
+    buttonLap.onclick = function() {
+        LapDisplay.innerHTML += minutes + ":" + seconds + ":" + tens + "<br>"
     }
 
     function startTimer() {
@@ -65,34 +73,35 @@ window.onload = function () { // as soon as page loads up, run function
             appendSeconds.innerHTML = "0" + 0
         }
     }
+
+    function showTime(){
+        let date = new Date()
+        let h = date.getHours()
+        let m = date.getMinutes()
+        let s = date.getSeconds()
+        let day = "AM"
+
+        //At start of the day, change 0 to 12
+        if(h == 0){
+            h = 12
+        }
+
+        if(h > 12){
+            h -= 12
+            day = "PM"
+        }
+
+        //If number is less then 10, add 0
+        h = (h < 10) ? "0" + h : h //? is then : is otherwise or else
+        m = (m < 10) ? "0" + m : m
+        s = (s < 10) ? "0" + s : s
+
+        let time = h + ":" + m + ":" + s + " " + day
+        document.getElementById("clockDisplay").innerHTML = time
+
+        setTimeout(showTime, 1000)
+    }
+
+    showTime()
 }
 
-function showTime(){
-    var date = new Date();
-    var h = date.getHours(); // 0 - 23
-    var m = date.getMinutes(); // 0 - 59
-    var s = date.getSeconds(); // 0 - 59
-    var session = "AM";
-    
-    if(h == 0){
-        h = 12;
-    }
-    
-    if(h > 12){
-        h = h - 12;
-        session = "PM";
-    }
-    
-    h = (h < 10) ? "0" + h : h;
-    m = (m < 10) ? "0" + m : m;
-    s = (s < 10) ? "0" + s : s;
-    
-    var time = h + ":" + m + ":" + s + " " + session;
-    document.getElementById("MyClockDisplay").innerText = time;
-    document.getElementById("MyClockDisplay").textContent = time;
-    
-    setTimeout(showTime, 1000);
-    
-}
-
-showTime();

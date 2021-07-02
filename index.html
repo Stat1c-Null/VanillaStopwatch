@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Stopwatch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -21,10 +24,13 @@
         </p>
         <button id="start">Start</button>
         <button id="stop">Stop</button>
+        <button id="lap">Lap</button>
         <button id="reset">Reset</button>
+        <br>
+        <div id="LapDisplay" class="time"></div>
     </div>
 
-    <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+    <div id="clockDisplay" class="clock" onload="showTime()"></div>
     <script src="script.js"></script>
 </body>
 
